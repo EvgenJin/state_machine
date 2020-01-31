@@ -16,14 +16,8 @@ obj.state = 'start'
 obj.name = 'start'
 obj.during = 10
 
-// engine.doTransfer(obj,'first')
-// console.log(obj)
-// console.log(engine.findAviableTransfers(obj.state))
-// console.log(engine.checkTransfer(obj.state,'st2inw'))
-// console.log(engine.getStateByTrans('st2inw'))
-// engine.doTransfer(obj,'first')
-// // 
-// console.log(obj)
+engine.doTransfer(obj,'first')
+
 const inquirer = require('inquirer');
 
 let inq = function() {
@@ -38,7 +32,7 @@ let inq = function() {
      else {
        engine.doTransfer(obj,answers.events)
      }
-    // console.log(`${answers.name}. ${answers.iceCream}`);
+
   })
   .then((answers) => {
     if (obj.state !== 'complete') { inq() }
@@ -56,7 +50,6 @@ function chainError(err) {
   return Promise.reject(err)
 };
 
-// console.log(rule.getAll(obj,8))
 
 
 
